@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button below to begain.</p>
+
+<button onclick="myFunction()">START</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let str = prompt("Enter a number between 100 and 999");
+  
+  if(str === null || isNaN(str))
+  {
+    str = 0;
+  }
+  if(str < 100 || str > 999)
+  {
+  	document.getElementById("demo").innerHTML = "Wrong input! your input must be between 100 and 999";
+  }else{
+  let n1 = str.substring(0, 1);
+  let n2 = str.substring(1, 2);
+  let n3 = str.substring(2, 3);
+  
+  let res = (parseInt(n1*n1*n1)+parseInt(n2*n2*n2)+parseInt(n3*n3*n3))
+  
+  if(parseInt(res)===parseInt(str)){
+  document.getElementById("demo").innerHTML = str + " is a Narcissistic Number";
+  }
+  else
+  {
+  	document.getElementById("demo").innerHTML = str + " is not a Narcissistic Number";
+  }
+  
+  }
+}
+</script>
+
+</body>
+</html>
